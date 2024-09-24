@@ -1,0 +1,936 @@
+{
+	"info": {
+		"_postman_id": "a6082d59-bd4c-40f7-bf9e-436e10e7170f",
+		"name": "Maju Mundur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25174316",
+		"_collection_link": "https://universal-crescent-523595.postman.co/workspace/p~78bd5fdc-d3ab-4372-a5c8-2ee98b95168f/collection/25174316-a6082d59-bd4c-40f7-bf9e-436e10e7170f?action=share&source=collection_link&creator=25174316"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create New Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY3MTUyNDEsImV4cCI6MTcxNjgxNTI0MSwiaXNzIjoiRW5pZ21hIFNob3AiLCJzdWIiOiI2OTg3MjdkZS00OGQ2LTQ2YjEtYjY1Ni00NzE5MDc2NDhmZDIiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl19.y6cO1gbsZdbwGVn5Wzr2a4eqLycF92FXqvCbbPRXZtnuDC2HSxXxFV-I04SRrKDSH0U156yfjKCf3UKv1KQqag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"manggaa\",\n  \"price\": 2000,\n  \"stock\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"ddb06e8f-5ec0-4209-8672-f1b3e9cdef\",\n    \"name\": \"Pisang Goreng Madu\",\n    \"price\": 5000,\n    \"stock\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTY3MTUyNDEsImV4cCI6MTcxNjgxNTI0MSwiaXNzIjoiRW5pZ21hIFNob3AiLCJzdWIiOiI2OTg3MjdkZS00OGQ2LTQ2YjEtYjY1Ni00NzE5MDc2NDhmZDIiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl19.y6cO1gbsZdbwGVn5Wzr2a4eqLycF92FXqvCbbPRXZtnuDC2HSxXxFV-I04SRrKDSH0U156yfjKCf3UKv1KQqag",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products?name=Apel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "direction",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "price",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Apel"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Product By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products?name=Ubi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Ubi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/55bb0d10-24d8-45a6-9ba6-67b59062d414",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"55bb0d10-24d8-45a6-9ba6-67b59062d414"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dell Product By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/products/f4251d20-92c0-451a-b51e-8fd1e66896b6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"f4251d20-92c0-451a-b51e-8fd1e66896b6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create New Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"id_2d00739f66be\",\n  \"name\": \"name_152ad360a3e7\",\n  \"mobilePhoneNo\": \"mobilePhoneNo_3dfa38533486\",\n  \"birthDate\": \"2024-08-23 14:41:02\",\n  \"status\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTg3MjdkZS00OGQ2LTQ2YjEtYjY1Ni00NzE5MDc2NDhmZDIiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcxNjIwMjQwOSwiZXhwIjoxNzQ1MDAyNDA5LCJpc3MiOiJFbmlnbWEgU2hvcCJ9.E-w4Hr973AAqtsk84aKgWee3c26-CTe7qvoseXSFFlhm-MtLV9pqgOXOuf8DC0K5EAFbZPvfeZVDuItq2Y8yDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"c3597855-93dc-4207-a1c2-2738de8423db\",\n    \"name\": \"Ribet banget lah\",\n    \"mobilePhoneNo\": \"0856714568\",\n    \"address\": \"Jl. H. Dahlan\",\n    \"birthDate\": \"2022-01-01\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"ddb06e8f-5ec0-4209-8672-f1b3e9cdef\",\n    \"name\": \"Pisang Goreng Madu\",\n    \"price\": 5000,\n    \"stock\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/4bd2b3e6-422d-4699-b0d0-cae789e904bb?status=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"4bd2b3e6-422d-4699-b0d0-cae789e904bb"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwODJhZGI5ZC0wODFlLTRjODgtYjMzOS05MWE5NmJhY2NkNmMiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcxNjE5MDIyOSwiZXhwIjoxNzQ0OTkwMjI5LCJpc3MiOiJFbmlnbWEgU2hvcCJ9.tvDDWe7bTl46Nk_jAN-uHOWVqBIRCHBs3MXEP98bT9urCi398vVYX7W0ZTIcm3dppn8zKdIbPm9i3oDVcW4Tkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYxMjgzOTAsImV4cCI6MTcxNjIyODM5MCwiaXNzIjoiRW5pZ21hIFNob3AiLCJzdWIiOiIwODJhZGI5ZC0wODFlLTRjODgtYjMzOS05MWE5NmJhY2NkNmMiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl19.lXOgPGqrRlxWu5uFl5cQ-NtPmcxRojRoPyuW0hatd4stuvNNbu3s81wTcJ8Ni8AdFFyH7O9JGVrA_lpFa2W7Yw",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "dani",
+									"disabled": true
+								},
+								{
+									"key": "mobilePhoneNo",
+									"value": "0856238423",
+									"disabled": true
+								},
+								{
+									"key": "birthDate",
+									"value": "2024-08-05",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Customer By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers?status=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "adil",
+									"disabled": true
+								},
+								{
+									"key": "mobilePhoneNo",
+									"value": "0856714568",
+									"disabled": true
+								},
+								{
+									"key": "birthDate",
+									"value": "2024-11-05",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/ca7facec-0289-4b31-89ae-c050414785a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"ca7facec-0289-4b31-89ae-c050414785a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dell Customer By Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/customers/ddb06e8f-5ec0-4209-8672-f1b3e9cdef64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"ddb06e8f-5ec0-4209-8672-f1b3e9cdef64"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merchant",
+			"item": [
+				{
+					"name": "Create New Merchant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"id_2d00739f66be\",\n  \"name\": \"name_152ad360a3e7\",\n  \"mobilePhoneNo\": \"mobilePhoneNo_3dfa38533486\",\n  \"birthDate\": \"2024-08-23 14:41:02\",\n  \"status\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Merchant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTg3MjdkZS00OGQ2LTQ2YjEtYjY1Ni00NzE5MDc2NDhmZDIiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcxNjIwMjQwOSwiZXhwIjoxNzQ1MDAyNDA5LCJpc3MiOiJFbmlnbWEgU2hvcCJ9.E-w4Hr973AAqtsk84aKgWee3c26-CTe7qvoseXSFFlhm-MtLV9pqgOXOuf8DC0K5EAFbZPvfeZVDuItq2Y8yDw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"c3597855-93dc-4207-a1c2-2738de8423db\",\n    \"name\": \"Ribet banget lah\",\n    \"mobilePhoneNo\": \"0856714568\",\n    \"address\": \"Jl. H. Dahlan\",\n    \"birthDate\": \"2022-01-01\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Merchant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwODJhZGI5ZC0wODFlLTRjODgtYjMzOS05MWE5NmJhY2NkNmMiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcxNjE5MDIyOSwiZXhwIjoxNzQ0OTkwMjI5LCJpc3MiOiJFbmlnbWEgU2hvcCJ9.tvDDWe7bTl46Nk_jAN-uHOWVqBIRCHBs3MXEP98bT9urCi398vVYX7W0ZTIcm3dppn8zKdIbPm9i3oDVcW4Tkg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTYxMjgzOTAsImV4cCI6MTcxNjIyODM5MCwiaXNzIjoiRW5pZ21hIFNob3AiLCJzdWIiOiIwODJhZGI5ZC0wODFlLTRjODgtYjMzOS05MWE5NmJhY2NkNmMiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl19.lXOgPGqrRlxWu5uFl5cQ-NtPmcxRojRoPyuW0hatd4stuvNNbu3s81wTcJ8Ni8AdFFyH7O9JGVrA_lpFa2W7Yw",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "dani",
+									"disabled": true
+								},
+								{
+									"key": "mobilePhoneNo",
+									"value": "0856238423",
+									"disabled": true
+								},
+								{
+									"key": "birthDate",
+									"value": "2024-08-05",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All MerchantBy Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers?status=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "adil",
+									"disabled": true
+								},
+								{
+									"key": "mobilePhoneNo",
+									"value": "0856714568",
+									"disabled": true
+								},
+								{
+									"key": "birthDate",
+									"value": "2024-11-05",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get MerchantBy Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/customers/ca7facec-0289-4b31-89ae-c050414785a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"ca7facec-0289-4b31-89ae-c050414785a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dell MerchantBy Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/customers/ddb06e8f-5ec0-4209-8672-f1b3e9cdef64",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"customers",
+								"ddb06e8f-5ec0-4209-8672-f1b3e9cdef64"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Create New Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwODJhZGI5ZC0wODFlLTRjODgtYjMzOS05MWE5NmJhY2NkNmMiLCJyb2xlcyI6WyJST0xFX0NVU1RPTUVSIl0sImlhdCI6MTcxNjg4NDc2NSwiZXhwIjoxNzQ1Njg0NzY1LCJpc3MiOiJFbmlnbWEgU2hvcCJ9.4ehyfCoDBMvj_frGS6i5xhPYAviJ90IX4umTbfDzceIYgViy3TIZzk4FBwwB75Hfkb_TxB92dNwkew3Nwx3lsQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerId\": \"c3597855-93dc-4207-a1c2-2738de8423db\",\n  \"transactionDetails\": [\n    {\n      \"productId\": \"28bd49b0-bfc7-4104-86b5-9f96503e6150\",\n      \"qty\": 2\n    } \n    // ,{ \n    //   \"productId\": \"a5f262c8-bf4f-436c-9e21-c27b8a994ca3\",\n    //   \"qty\": 1\n    // }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://225a-182-253-246-153.ngrok-free.app/api/v1/transactions",
+							"protocol": "https",
+							"host": [
+								"225a-182-253-246-153",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Transaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/transactions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upadate Status Transaction Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_id\":\"11f0617d-a0b2-4ce0-9ded-b636597f70b3\",\n    \"transaction_status\": \"ordered\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://225a-182-253-246-153.ngrok-free.app/api/v1/transactions/status",
+							"protocol": "https",
+							"host": [
+								"225a-182-253-246-153",
+								"ngrok-free",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register Customer Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"HamJhir\",\n  \"password\": \"RoIl\"\n}\n\n// {\n//   \"username\": \"JhirHam\",\n//   \"password\": \"IlRo\"\n// }\n// {\n//   \"username\": \"FullCustomer\",\n//   \"password\": \"password\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"JhirHam\",\n  \"password\": \"IlRo\"\n}\n\n// {\n//   \"username\": \"superadmin\",\n//   \"password\": \"password\"\n// }\n\n// {\n//   \"username\": \"HamJhir\",\n//   \"password\": \"RoIl\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"JhirHam\",\n  \"password\": \"IlRo\"\n}\n\n// {\n//   \"username\": \"superadmin\",\n//   \"password\": \"password\"\n// }\n\n// {\n//   \"username\": \"HamJhir\",\n//   \"password\": \"RoIl\"\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merchant",
+			"item": [
+				{
+					"name": "Create New Merchant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/merchants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"merchants"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
